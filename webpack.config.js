@@ -1,10 +1,15 @@
 ﻿const path = require("path");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+let mode = "development";
+let target = "web";
 const env = process.env.NODE_ENV;
 
 const plugins = [
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
         filename: "css/[name].css"
     }),
@@ -13,17 +18,25 @@ const plugins = [
     })
 ];
 
+if (process.env.NODE_ENV === "production") {
+    mode = "production";
+    target = "browserslist";
+}
+
+if (process.env.SERVE) {
+    plugins.push(new ReactRefreshWebpackPlugin());
+}
+
 module.exports = {
-    target: env === "production" ? "browserslist" : "web",
-    plugins,
+    mode: mode,
+    target: target,
+    plugins: plugins,
     devtool: "source-map",
-    entry: "./src/components/index.tsx",
+    entry: "./src/index.tsx",
     output: {
-        path: path.resolve(__dirname, "./dist"),
+        path: path.resolve(__dirname, "dist"),
         filename: "[name].bundle.js",
-        publicPath: "/dist/",
-        assetModuleFilename: "assets/[hash][ext][query]",
-        clean: true
+        assetModuleFilename: "assets/[hash][ext][query]"
     },
 
     resolve: {
@@ -42,9 +55,11 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
-                loader: "babel-loader",
-                options: {
-                    presets: ["@babel/preset-typescript", "@babel/preset-react"]
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        cacheDirectory: true
+                    }
                 }
             },
             {
