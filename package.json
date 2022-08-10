@@ -22,6 +22,7 @@
     "postcss": "8.4.16",
     "postcss-loader": "7.0.1",
     "postcss-preset-env": "7.7.2",
+    "prettier": "2.7.1",
     "react-refresh": "0.14.0",
     "sass": "1.54.4",
     "sass-loader": "13.0.2",
@@ -34,6 +35,8 @@
     "start": "webpack serve --mode=development",
     "build": "webpack --mode=development",
     "build:release": "webpack --mode=production",
-    "clean": "rd /s /q dist"
+    "clean": "rd /s /q dist",
+    "format:check": "prettier -c **/*.{js,md,scss,ts,tsx}",
+    "format:write": "prettier -w **/*.{js,md,scss,ts,tsx}"
   }
 }

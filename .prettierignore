@@ -1,0 +1,10 @@
+﻿**/.config/**
+**/.vscode-test/**
+**/.vscode/**
+**/.vs/**
+**/node_modules/**
+**/packages/**
+**/Properties/**
+**/dist/**
+**/[Bb]in/**
+**/[Oo]bj/**
