@@ -41,7 +41,7 @@
   "scripts": {
     "start": "cross-env SERVE=true webpack serve",
     "build:watch": "webpack --watch",
-    "build:development": "npm run clean && webpack",
+    "build:development": "webpack",
     "build:release": "webpack --mode=production",
     "clean": "rd /s /q dist",
     "format:check": "prettier -c **/*.{js,md,scss,ts,tsx}",

@@ -5,6 +5,7 @@
     "sourceMap": true,
     "target": "ES2018",
     "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true
   },
   "include": [
     "src"
