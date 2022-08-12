@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-
     "react-dom": "18.2.0",
-    "react-router-dom": "6.3.0"
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@babel/core": "7.18.10",
@@ -28,8 +27,10 @@
     "postcss-loader": "7.0.1",
     "postcss-preset-env": "7.7.2",
     "prettier": "2.7.1",
+    "prettier-plugin-organize-imports": "3.0.3",
     "react": "18.2.0",
     "react-bootstrap": "^2.5.0",
+    "react-bootstrap-icons": "^1.8.4",
     "react-refresh": "0.14.0",
     "sass": "1.54.4",
     "sass-loader": "13.0.2",
