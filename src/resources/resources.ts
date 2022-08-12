@@ -8,5 +8,10 @@
     },
     Urls: {
         github_lnk: "https://github.com/IXvlad"
+    },
+    Messages: {
+        Error: {
+            request_server_error_msg: "Something went wrong!"
+        }
     }
 };
