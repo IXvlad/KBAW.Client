@@ -1,8 +1,8 @@
+import Expert from "@kbaw/pages/Expert";
+import Main from "@kbaw/pages/Main";
+import Settings from "@kbaw/pages/Settings";
+import { resources } from "@resources/resources";
 import { BookHalf, Gear, PersonBadge } from "react-bootstrap-icons";
-import Expert from "../pages/Expert";
-import Main from "../pages/Main";
-import Settings from "../pages/Settings";
-import { resources } from "../resources/resources";
 import IRouteItem from "./models";
 
 export const routes: Array<IRouteItem> = [

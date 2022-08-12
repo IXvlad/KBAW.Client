@@ -42,7 +42,14 @@ module.exports = {
     },
 
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx"]
+        extensions: [".ts", ".tsx", ".js", ".jsx"],
+        alias: {
+            "@kbaw": path.join(__dirname, "src"),
+            "@components": path.join(__dirname, "src/components"),
+            "@routes": path.join(__dirname, "src/routes"),
+            "@typings": path.join(__dirname, "src/typings"),
+            "@resources": path.join(__dirname, "src/resources")
+        }
     },
 
     devServer: {

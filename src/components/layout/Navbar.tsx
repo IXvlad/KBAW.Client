@@ -1,10 +1,10 @@
+import NavLink from "@components/controls/NavLink";
+import IRouteItem from "@routes/models";
+import { routes } from "@routes/routes";
 import { FC, ReactElement } from "react";
 import { Navbar as BNavbar } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import IRouteItem from "../../routes/models";
-import { routes } from "../../routes/routes";
-import NavLink from "./NavLink";
 
 const Navbar: FC<{}> = (): ReactElement => {
     return (

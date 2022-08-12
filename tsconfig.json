@@ -5,7 +5,14 @@
     "sourceMap": true,
     "target": "ES2018",
     "jsx": "react-jsx",
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@kbaw/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@typings/*": ["./src/typings/*"],
+      "@resources/*": ["./src/resources/*"]
+    }
   },
   "include": [
     "src"

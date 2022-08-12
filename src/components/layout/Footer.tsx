@@ -1,5 +1,5 @@
-﻿import { FC, ReactElement } from "react";
-import { resources } from "../../resources/resources";
+﻿import { resources } from "@resources/resources";
+import { FC, ReactElement } from "react";
 
 const Footer: FC<{}> = (): ReactElement => {
     return (

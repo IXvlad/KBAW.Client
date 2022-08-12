@@ -1,5 +1,5 @@
-﻿import { ReactElement } from "react";
-import IRouteItem from "../routes/models";
+﻿import IRouteItem from "@routes/models";
+import { ReactElement } from "react";
 
 interface ILayoutProps {
     children: ReactElement;

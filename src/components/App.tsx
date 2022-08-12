@@ -1,8 +1,8 @@
+import Layout from "@components/layout/Layout";
+import IRouteItem from "@routes/models";
+import { routes } from "@routes/routes";
 import { FC, ReactElement } from "react";
 import { Route, Routes } from "react-router-dom";
-import IRouteItem from "../routes/models";
-import { routes } from "../routes/routes";
-import Layout from "./layout/Layout";
 
 const DefaultComponent: FC<{}> = (): ReactElement => <div>No Component Defined</div>;
 
