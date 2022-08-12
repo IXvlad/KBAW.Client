@@ -36,6 +36,7 @@ module.exports = {
     entry: "./src/index.tsx",
     output: {
         path: path.resolve(__dirname, "dist"),
+        publicPath: "/",
         filename: "[name].bundle.js",
         assetModuleFilename: "assets/[hash][ext][query]"
     },
@@ -45,6 +46,7 @@ module.exports = {
     },
 
     devServer: {
+        historyApiFallback: true,
         static: {
             directory: path.join(__dirname, "./src")
         },

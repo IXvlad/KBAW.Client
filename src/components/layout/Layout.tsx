@@ -1,5 +1,5 @@
 ﻿import { FC, ReactElement } from "react";
-import { ILayoutProps } from "../props";
+import { ILayoutProps } from "../../typings/props";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
