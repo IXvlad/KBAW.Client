@@ -1,0 +1,18 @@
+.dropdown {
+    .dropdown-toggle {
+        min-width: 200px;
+    }
+
+    .dropdown-menu {
+        max-height: 140px;
+        overflow-y: scroll;
+
+        &.show {
+            min-width: 200px;
+        }
+    }
+
+    .dropdown-spinner {
+        margin-left: 75px;
+    }
+}

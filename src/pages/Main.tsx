@@ -1,30 +1,29 @@
+import CustomDropdown from "@components/controls/CustomDropdown";
 import { getMaterialsAsync } from "@kbaw/services/getMaterials";
-import { IMaterial } from "@kbaw/services/models";
-import { useQuery } from "@tanstack/react-query";
+import { IRemoteData } from "@typings/props";
 import { FC, ReactElement } from "react";
+import { Dropdown } from "react-bootstrap";
 
-const Example: FC<{}> = (): ReactElement => {
-    const { isLoading, data, error } = useQuery([nameof(getMaterialsAsync)], getMaterialsAsync, { retry: false });
-
-    if (isLoading) {
-        return <div>loading...</div>;
-    }
-
-    if (error) {
-        return <div>{error.toString()}</div>;
-    }
-
-    return (
-        <div>
-            {data.map((item: IMaterial) => (
-                <p key={item.key}>{item.name}</p>
-            ))}
-        </div>
-    );
+const fetchMaterials: IRemoteData = {
+    queryKey: nameof(getMaterialsAsync),
+    fetchData: getMaterialsAsync
 };
 
 const Main: FC<{}> = (): ReactElement => {
-    return <Example />;
+    return (
+        <div>
+            <div className="mt-3">
+                <CustomDropdown id="custom-dropdown" variant="light" title={"Choose material"} remoteData={fetchMaterials} />
+            </div>
+            <div className="mt-3">
+                <CustomDropdown id="custom-dropdown-2" variant="light">
+                    <Dropdown.Item>Action</Dropdown.Item>
+                    <Dropdown.Item>Another action</Dropdown.Item>
+                    <Dropdown.Item>Something else</Dropdown.Item>
+                </CustomDropdown>
+            </div>
+        </div>
+    );
 };
 
 export default Main;

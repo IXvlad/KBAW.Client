@@ -1,5 +1,6 @@
 ﻿export const resources = {
     Labels: {
+        dropdown_title_lbl: "Select...",
         main_lbl: "Knowledge base about welding",
         footer_lbl: "Created by Meledin",
         main_page_title_lbl: "Articles",
