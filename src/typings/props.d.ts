@@ -1,4 +1,7 @@
-﻿import IRouteItem from "@routes/models";
+﻿import { IRecord } from "@components/models";
+import IRouteItem from "@routes/models";
+import { Column, Table } from "@tanstack/react-table";
+import { Table as ReactTable } from "@tanstack/table-core";
 import React, { ReactElement } from "react";
 import { DropdownMenuVariant } from "react-bootstrap/DropdownMenu";
 import { ButtonVariant } from "react-bootstrap/types";
@@ -9,18 +12,18 @@ interface IDropdownItem {
     value: string | number;
 }
 
-interface IRemoteData {
-    queryKey: string;
-    fetchData(): Promise<IDropdownItem[]>;
-}
-
 interface IDropdownProps {
     children?: React.ReactNode;
     id: string;
     menuVariant?: DropdownMenuVariant;
-    remoteData?: IRemoteData;
+    remoteData?: IDropdownRemoteData;
     title?: string;
     variant?: ButtonVariant;
+}
+
+interface IDropdownRemoteData {
+    queryKey: string;
+    fetchData(): Promise<IDropdownItem[]>;
 }
 
 interface IEmptyDropdownProps {
@@ -31,10 +34,43 @@ interface IEmptyDropdownProps {
     variant?: ButtonVariant;
 }
 
+interface IFilterProps {
+    column: Column<any, any>;
+    table: ReactTable<any>;
+}
+
 interface ILayoutProps {
     children: ReactElement;
 }
 
 interface INavLinkProps {
     route: IRouteItem;
+}
+
+interface IPaginationProps {
+    table: ReactTable<any>;
+}
+
+interface IRecordTableProps {
+    className?: string;
+    remoteData?: IRecordTableRemoteData;
+}
+
+interface IRecordTableRemoteData {
+    queryKey: string;
+    fetchData(): Promise<IRecord[]>;
+}
+
+interface ITableBodyProps {
+    table: Table<any>;
+}
+
+interface ITableHeaderProps {
+    table: Table<any>;
+    hiddenColumn: string;
+}
+
+interface ITableRowProps {
+    row: any;
+    rowId: string;
 }

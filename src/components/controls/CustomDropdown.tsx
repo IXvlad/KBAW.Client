@@ -12,7 +12,7 @@ const EmptyDropdown: FC<IEmptyDropdownProps> = ({ variant, menuVariant, id, titl
 
 const CustomDropdown: FC<IDropdownProps> = ({ title, remoteData, id, children, variant, menuVariant }): ReactElement => {
     const useRemoteData = !!remoteData;
-    const { isLoading, data, error } = useQuery([nameof(remoteData.queryKey)], remoteData?.fetchData, { retry: false, enabled: useRemoteData });
+    const { isLoading, data, error } = useQuery([remoteData?.queryKey], remoteData?.fetchData, { retry: false, enabled: useRemoteData });
     const [dropdownTitle, setDropdownTitle] = useState(title ? title : resources.Labels.dropdown_title_lbl);
 
     if ((useRemoteData && isLoading) || error) {

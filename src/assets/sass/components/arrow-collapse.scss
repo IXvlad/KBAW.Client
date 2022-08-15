@@ -1,0 +1,13 @@
+.arrow-collapse {
+    cursor: pointer;
+
+    &[aria-expanded="true"] {
+        transform: rotate(180deg);
+        transition: all linear 0.25s;
+    }
+
+    &[aria-expanded="false"] {
+        transform: rotate(0deg);
+        transition: all linear 0.25s;
+    }
+}
