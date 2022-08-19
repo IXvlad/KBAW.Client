@@ -16,10 +16,8 @@ const fetchRecords: IRecordTableRemoteData = {
 
 const Main: FC<{}> = (): ReactElement => {
     return (
-        <div>
-            <div className="mt-3 mb-3">
-                <RecordTable className="record-table" />
-            </div>
+        <div className="mt-3 mb-3">
+            <RecordTable className="record-table" />
         </div>
     );
 };

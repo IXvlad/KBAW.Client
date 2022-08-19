@@ -7,7 +7,7 @@ const Layout: FC<ILayoutProps> = ({ children }): ReactElement => {
     return (
         <>
             <Navbar />
-            {children}
+            <main>{children}</main>
             <Footer />
         </>
     );

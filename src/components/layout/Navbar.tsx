@@ -9,19 +9,21 @@ import Nav from "react-bootstrap/Nav";
 
 const Navbar: FC<{}> = (): ReactElement => {
     return (
-        <BNavbar bg="light" expand="lg">
-            <Container>
-                <BNavbar.Brand>{resources.Labels.main_lbl}</BNavbar.Brand>
-                <BNavbar.Toggle aria-controls="basic-navbar-nav" />
-                <BNavbar.Collapse role="navigation" id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        {routes.map((route: IRouteItem) => (
-                            <NavLink key={route.key} route={route} />
-                        ))}
-                    </Nav>
-                </BNavbar.Collapse>
-            </Container>
-        </BNavbar>
+        <header>
+            <BNavbar bg="light" expand="lg">
+                <Container>
+                    <BNavbar.Brand>{resources.Labels.main_lbl}</BNavbar.Brand>
+                    <BNavbar.Toggle aria-controls="basic-navbar-nav" />
+                    <BNavbar.Collapse role="navigation" id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            {routes.map((route: IRouteItem) => (
+                                <NavLink key={route.key} route={route} />
+                            ))}
+                        </Nav>
+                    </BNavbar.Collapse>
+                </Container>
+            </BNavbar>
+        </header>
     );
 };
 
