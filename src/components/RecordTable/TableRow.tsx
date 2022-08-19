@@ -27,11 +27,11 @@ const TableRow: FC<ITableRowProps> = ({ row, rowId }): ReactElement => {
                 })}
             </tr>
             <tr key={`${rowId}-tr-details`}>
-                <Collapse in={open}>
-                    <td id={`${rowId}-td-details`} key={`${rowId}-td-details`} colSpan={row.getAllCells().length} className="collapse-row">
-                        {getHiddenCells(row)[0].renderValue() as string}
-                    </td>
-                </Collapse>
+                <td key={`${rowId}-td-details`} colSpan={row.getAllCells().length}>
+                    <Collapse in={open}>
+                        <div id={`${rowId}-td-details`} className="px-4">{getHiddenCells(row)[0].renderValue() as string}</div>
+                    </Collapse>
+                </td>
             </tr>
         </>
     );
