@@ -6,13 +6,13 @@
     thead {
         position: sticky;
         top: 0;
-        box-shadow: 0 4px 2px -2px whitesmoke;
         z-index: 1000;
+        background-color: #fefefe;
 
         th {
             text-align: left;
-            border-bottom: 2px solid whitesmoke;
-            border-right: 2px solid whitesmoke;
+            border-bottom: 1px solid #dcdcdc;
+            border-right: 1px solid #dcdcdc;
             padding: 2px 4px;
         }
     }
@@ -20,17 +20,24 @@
     & > tbody {
         display: block;
 
-        tr:nth-child(4n + 1) {
-            background-color: whitesmoke;
+        tr {
+            background-color: #fefefe;
+
+            &:nth-child(4n + 1) {
+                background-color: #f7f7f7;
+            }
         }
 
         td {
-            text-align: left;
+            text-align: justify;
+            border-right: 1px solid #dcdcdc;
+            padding-right: 10px;
         }
     }
 }
 
 .table-border {
-    border: 0.2rem solid #ececec;
-    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    display: flex;
+    flex-direction: column;
 }

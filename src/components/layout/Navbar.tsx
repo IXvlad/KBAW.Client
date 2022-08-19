@@ -3,24 +3,37 @@ import { resources } from "@resources/resources";
 import IRouteItem from "@routes/models";
 import { routes } from "@routes/routes";
 import { FC, ReactElement } from "react";
-import { Navbar as BNavbar } from "react-bootstrap";
-import Container from "react-bootstrap/Container";
+import { Container, Navbar as BNavbar, Offcanvas } from "react-bootstrap";
+import { List } from "react-bootstrap-icons";
 import Nav from "react-bootstrap/Nav";
 
 const Navbar: FC<{}> = (): ReactElement => {
+    const expand = "false";
+    const key = `navbar-expand-${expand}`;
+
     return (
         <header>
-            <BNavbar bg="light" expand="lg">
-                <Container>
-                    <BNavbar.Brand>{resources.Labels.main_lbl}</BNavbar.Brand>
-                    <BNavbar.Toggle aria-controls="basic-navbar-nav" />
-                    <BNavbar.Collapse role="navigation" id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            {routes.map((route: IRouteItem) => (
-                                <NavLink key={route.key} route={route} />
-                            ))}
-                        </Nav>
-                    </BNavbar.Collapse>
+            <BNavbar key={expand} expand={expand} className="bg-primary mb-3">
+                <Container fluid>
+                    <BNavbar.Brand>
+                        <img src="../assets/images/Logo.png" width="35" height="30" className="d-inline-block align-top" alt="KBAW logo" />
+                        <strong className="text-white">{resources.Labels.main_lbl.toUpperCase()}</strong>
+                    </BNavbar.Brand>
+                    <BNavbar.Toggle aria-controls={`${key}`} className="text-white border-0">
+                        <List className="fs-2" />
+                    </BNavbar.Toggle>
+                    <BNavbar.Offcanvas id={`${key}`} aria-labelledby={`${key}`} placement="end">
+                        <Offcanvas.Header closeButton>
+                            <Offcanvas.Title id={`${key}`}>NAVIGATE</Offcanvas.Title>
+                        </Offcanvas.Header>
+                        <Offcanvas.Body>
+                            <Nav className="justify-content-end flex-grow-1 pe-3">
+                                {routes.map((route: IRouteItem) => (
+                                    <NavLink key={route.key} route={route} />
+                                ))}
+                            </Nav>
+                        </Offcanvas.Body>
+                    </BNavbar.Offcanvas>
                 </Container>
             </BNavbar>
         </header>

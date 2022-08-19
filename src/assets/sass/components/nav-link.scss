@@ -1,0 +1,10 @@
+.nav-link {
+    &.active {
+        background-color: $primary;
+        color: $white !important;
+    }
+
+    &:hover:not(.active) {
+        background-color: lightgrey;
+    }
+}

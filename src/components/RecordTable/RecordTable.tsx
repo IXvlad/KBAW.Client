@@ -7,8 +7,8 @@ import { ColumnDef, createColumnHelper, getCoreRowModel, getFilteredRowModel, ge
 import { IRecordTableProps } from "@typings/props";
 import React, { FC, ReactElement } from "react";
 
+type keys = keyof IRecord;
 const getColumns = (): ColumnDef<IRecord, any>[] => {
-    type keys = keyof IRecord;
     const record: IRecord = {
         title: "",
         authors: [],
@@ -34,7 +34,7 @@ const getColumns = (): ColumnDef<IRecord, any>[] => {
     return Object.keys(record).map((key: keys) => {
         switch (key) {
             case "title": {
-                return createColumn(key, "Title", true, 600);
+                return createColumn(key, "Title", true, 645);
             }
 
             case "description": {
@@ -76,10 +76,10 @@ const getColumns = (): ColumnDef<IRecord, any>[] => {
     });
 };
 
-const hiddenColumn = (table: any, columnName: string) => {
+const hiddenColumn = (table: any, columnNames: keys[]) => {
     table.getHeaderGroups().forEach((headerGroup: any) => {
         headerGroup.headers.forEach((header: Header<any, unknown>) => {
-            if (header.column.id === columnName) {
+            if (columnNames.includes(header.column.id as keys)) {
                 header.column.toggleVisibility(false);
             }
         });
@@ -98,10 +98,10 @@ const RecordTable: FC<IRecordTableProps> = ({ className }): ReactElement => {
         getPaginationRowModel: getPaginationRowModel()
     });
 
-    hiddenColumn(table, "description");
+    hiddenColumn(table, ["description", "ydk", "country", "number", "certificateAuthorship", "classification", "placePublication"]);
 
     return (
-        <div className="table-border">
+        <div className="table-border bg-light">
             <table className={className}>
                 <TableHeader table={table} hiddenColumn="description" />
                 <TableBody table={table} />

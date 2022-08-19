@@ -1,0 +1,24 @@
+.btn {
+    background-image: none;
+
+    strong {
+        color: white;
+    }
+
+    &-primary {
+        @include button-variant(
+            $white,
+            $primary-border,
+            $white,
+            $primary-hover-bg,
+            $primary-hover-border,
+            $white,
+            $primary-active-bg,
+            $primary-active-border,
+            $white,
+            $primary-disabled-bg,
+            $primary-disabled-border,
+            $white
+        );
+    }
+}

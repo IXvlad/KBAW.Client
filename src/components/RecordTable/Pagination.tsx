@@ -49,37 +49,50 @@ interface ISetPageSizeProps {
 }
 
 const SetPageSize: FC<ISetPageSizeProps> = ({ items, table }): ReactElement => {
-    const [title, setTitle] = useState("Show 10");
+    const [title, setTitle] = useState("10");
 
     const onClickHandler = (content: string) => {
-        setTitle(`Show ${content}`);
+        setTitle(content);
         table.setPageSize(Number(content));
     };
 
     return (
         <li className="page-item">
-            <Dropdown className="set-pages-dropdown">
-                <Dropdown.Toggle id="pagination-set-page-size">{title}</Dropdown.Toggle>
+            <div className="d-flex">
+                <p className="mb-0" style={{ marginTop: "6px" }}>
+                    Show:{" "}
+                </p>
+                <Dropdown className="set-pages-dropdown mx-2">
+                    <Dropdown.Toggle id="pagination-set-page-size">{title}</Dropdown.Toggle>
 
-                <Dropdown.Menu>
-                    {items.map((count: number | string) => (
-                        <Dropdown.Item key={count} onClick={(e: React.MouseEvent<HTMLElement>) => onClickHandler((e.target as HTMLElement).textContent)}>
-                            {count}
-                        </Dropdown.Item>
-                    ))}
-                </Dropdown.Menu>
-            </Dropdown>
+                    <Dropdown.Menu>
+                        {items.map((count: number | string) => (
+                            <Dropdown.Item key={count} onClick={(e: React.MouseEvent<HTMLElement>) => onClickHandler((e.target as HTMLElement).textContent)}>
+                                {count}
+                            </Dropdown.Item>
+                        ))}
+                    </Dropdown.Menu>
+                </Dropdown>
+            </div>
         </li>
     );
 };
 
 const Pagination: FC<IPaginationProps> = ({ table }): ReactElement => {
     return (
-        <BootstrapPagination className="bg-light mb-0">
+        <BootstrapPagination className="bg-light mb-1 justify-content-end border-top">
+            <SetPageSize table={table} items={[5, 10, 20]} />
             <BootstrapPagination.First onClick={() => table.setPageIndex(0)} disabled={!table.getCanPreviousPage()} />
             <BootstrapPagination.Prev onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()} />
             {getPages(table.getPageCount(), table.getState().pagination.pageIndex + 1, table)}
+            <BootstrapPagination.Next onClick={() => table.nextPage()} disabled={!table.getCanNextPage()} />
+            <BootstrapPagination.Last onClick={() => table.setPageIndex(table.getPageCount() - 1)} disabled={!table.getCanNextPage()} />
             <li className="page-item">
+                <p className="mb-0" style={{ marginTop: "6px" }}>
+                    Jump to:
+                </p>
+            </li>
+            <li className="page-item mx-2">
                 <Form.Control
                     type="number"
                     className="select-page"
@@ -93,9 +106,6 @@ const Pagination: FC<IPaginationProps> = ({ table }): ReactElement => {
                     }}
                 />
             </li>
-            <SetPageSize table={table} items={[5, 10, 20]} />
-            <BootstrapPagination.Next onClick={() => table.nextPage()} disabled={!table.getCanNextPage()} />
-            <BootstrapPagination.Last onClick={() => table.setPageIndex(table.getPageCount() - 1)} disabled={!table.getCanNextPage()} />
         </BootstrapPagination>
     );
 };

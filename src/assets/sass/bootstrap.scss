@@ -28,10 +28,14 @@
 @import "~bootstrap/scss/spinners";
 @import "~bootstrap/scss/tables";
 @import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/offcanvas";
 @import "~bootstrap/scss/transitions";
 @import "~bootstrap/scss/type";
 
 // Helpers
 @import "~bootstrap/scss/helpers";
+
+// Utilities
+@import "~bootstrap/scss/utilities/api";
 
 @import "~bootstrap/scss/bootstrap-utilities.scss";

@@ -6,10 +6,10 @@ import { FC } from "react";
 
 const TableHeader: FC<ITableHeaderProps> = ({ table, hiddenColumn }): JSX.Element => {
     return (
-        <thead className="bg-light" style={{ display: "block", width: table.getCenterTotalSize() + collapseColumnSize }}>
+        <thead style={{ display: "block", width: table.getCenterTotalSize() + collapseColumnSize }}>
             {table.getHeaderGroups().map(headerGroup => (
                 <tr key={headerGroup.id}>
-                    <th key={`${headerGroup.id}-expanded`} colSpan={1} style={{ width: collapseColumnSize }} />
+                    <th key={`${headerGroup.id}-expanded`} colSpan={1} style={{ width: collapseColumnSize }} className="border-0 border-bottom" />
                     {headerGroup.headers.map(header => {
                         return (
                             <th key={header.id} colSpan={header.colSpan} style={{ width: header.getSize() }}>

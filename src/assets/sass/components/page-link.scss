@@ -1,16 +1,19 @@
-.page-link,
-.select-page {
-    &:focus {
-        box-shadow: none;
-        border-color: #dee2e6;
+.page-item {
+    &:disabled {
+        background-color: transparent;
+    }
+
+    &.active .page-link {
+        color: $primary-active;
+    }
+
+    .page-link {
+        border: 0;
+        background-color: transparent;
     }
 }
 
 .select-page {
     width: 70px;
-    border: 0;
-    border-radius: 0;
-    border-top: 1px solid #dee2e6;
-    border-bottom: 1px solid #dee2e6;
-    border-right: 1px solid #dee2e6;
+    border-radius: 8px;
 }
