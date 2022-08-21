@@ -1,8 +1,11 @@
+import PagePaper from "@components/PagePaper";
 import RecordTable from "@components/RecordTable/RecordTable";
 import { getMaterialsAsync } from "@kbaw/services/getMaterials";
 import { getRecordsAsync } from "@kbaw/services/getRecords";
+import { resources } from "@resources/resources";
 import { IDropdownRemoteData, IRecordTableRemoteData } from "@typings/props";
 import { FC, ReactElement } from "react";
+import { Container } from "react-bootstrap";
 
 const fetchMaterials: IDropdownRemoteData = {
     queryKey: nameof(getMaterialsAsync),
@@ -16,9 +19,14 @@ const fetchRecords: IRecordTableRemoteData = {
 
 const Main: FC<{}> = (): ReactElement => {
     return (
-        <div className="mt-3 mb-3">
-            <RecordTable className="record-table" />
-        </div>
+        <>
+            <PagePaper title={resources.Labels.main_title_lbl} subTitle={resources.Labels.main_sub_title_lbl} className="mb-3" />
+            <Container>
+                <div className="mt-3 mb-3">
+                    <RecordTable className="record-table" />
+                </div>
+            </Container>
+        </>
     );
 };
 

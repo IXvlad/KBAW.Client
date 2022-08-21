@@ -13,7 +13,7 @@ const Navbar: FC<{}> = (): ReactElement => {
 
     return (
         <header>
-            <BNavbar key={expand} expand={expand} className="bg-primary mb-3">
+            <BNavbar key={expand} expand={expand} className="bg-primary">
                 <Container fluid>
                     <BNavbar.Brand>
                         <img src="../assets/images/Logo.png" width="35" height="30" className="d-inline-block align-top" alt="KBAW logo" />

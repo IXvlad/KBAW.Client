@@ -1,0 +1,17 @@
+﻿.page-paper {
+    background-color: #f8f9fa;
+    box-shadow: 0 0 12px 1px #bcc1c5;
+    height: 100px;
+
+    .card-icon {
+        height: 50px;
+        width: 50px;
+        border-color: transparent;
+        border-radius: 8px;
+        box-shadow: 0 0 5px 0 $primary;
+    }
+
+    .card-body {
+        padding: 10px 14px;
+    }
+}

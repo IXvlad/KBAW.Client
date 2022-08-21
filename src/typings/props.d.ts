@@ -51,6 +51,12 @@ interface IPaginationProps {
     table: ReactTable<any>;
 }
 
+interface IPagePaperProps {
+    className?: string;
+    title: string;
+    subTitle: string;
+}
+
 interface IRecordTableProps {
     className?: string;
     remoteData?: IRecordTableRemoteData;

@@ -80,32 +80,34 @@ const SetPageSize: FC<ISetPageSizeProps> = ({ items, table }): ReactElement => {
 
 const Pagination: FC<IPaginationProps> = ({ table }): ReactElement => {
     return (
-        <BootstrapPagination className="bg-light mb-1 justify-content-end border-top">
-            <SetPageSize table={table} items={[5, 10, 20]} />
-            <BootstrapPagination.First onClick={() => table.setPageIndex(0)} disabled={!table.getCanPreviousPage()} />
-            <BootstrapPagination.Prev onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()} />
-            {getPages(table.getPageCount(), table.getState().pagination.pageIndex + 1, table)}
-            <BootstrapPagination.Next onClick={() => table.nextPage()} disabled={!table.getCanNextPage()} />
-            <BootstrapPagination.Last onClick={() => table.setPageIndex(table.getPageCount() - 1)} disabled={!table.getCanNextPage()} />
-            <li className="page-item">
-                <p className="mb-0" style={{ marginTop: "6px" }}>
-                    Jump to:
-                </p>
-            </li>
-            <li className="page-item mx-2">
-                <Form.Control
-                    type="number"
-                    className="select-page"
-                    placeholder="Go to page"
-                    value={table.getState().pagination.pageIndex + 1}
-                    max={table.getPageCount()}
-                    min={1}
-                    onChange={e => {
-                        const page = e.target.value ? Number(e.target.value) - 1 : 0;
-                        table.setPageIndex(page);
-                    }}
-                />
-            </li>
+        <BootstrapPagination className="bg-light m-0 justify-content-end border-top">
+            <div className="mb-1 mt-1 d-flex">
+                <SetPageSize table={table} items={[5, 10, 20]} />
+                <BootstrapPagination.First onClick={() => table.setPageIndex(0)} disabled={!table.getCanPreviousPage()} />
+                <BootstrapPagination.Prev onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()} />
+                {getPages(table.getPageCount(), table.getState().pagination.pageIndex + 1, table)}
+                <BootstrapPagination.Next onClick={() => table.nextPage()} disabled={!table.getCanNextPage()} />
+                <BootstrapPagination.Last onClick={() => table.setPageIndex(table.getPageCount() - 1)} disabled={!table.getCanNextPage()} />
+                <li className="page-item">
+                    <p className="mb-0" style={{ marginTop: "6px" }}>
+                        Jump to:
+                    </p>
+                </li>
+                <li className="page-item mx-2">
+                    <Form.Control
+                        type="number"
+                        className="select-page"
+                        placeholder="Go to page"
+                        value={table.getState().pagination.pageIndex + 1}
+                        max={table.getPageCount()}
+                        min={1}
+                        onChange={e => {
+                            const page = e.target.value ? Number(e.target.value) - 1 : 0;
+                            table.setPageIndex(page);
+                        }}
+                    />
+                </li>
+            </div>
         </BootstrapPagination>
     );
 };

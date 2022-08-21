@@ -12,13 +12,11 @@ function App() {
     return (
         <QueryClientProvider client={queryClient}>
             <Layout>
-                <div className="container">
-                    <Routes>
-                        {routes.map((route: IRouteItem) => (
-                            <Route key={`${route.key}`} path={`${route.path}`} element={<route.component /> || <DefaultComponent />} />
-                        ))}
-                    </Routes>
-                </div>
+                <Routes>
+                    {routes.map((route: IRouteItem) => (
+                        <Route key={`${route.key}`} path={`${route.path}`} element={<route.component /> || <DefaultComponent />} />
+                    ))}
+                </Routes>
             </Layout>
         </QueryClientProvider>
     );
