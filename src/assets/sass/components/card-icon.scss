@@ -1,0 +1,26 @@
+﻿.card-icon {
+    height: 50px;
+    width: 50px;
+    border-color: transparent;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 0 $primary;
+
+    .card-body {
+        padding: 10px 14px;
+    }
+}
+
+.card-icon-dropdown {
+    background-color: $card-icon-dropdown-bg;
+    border-color: transparent;
+    border-radius: 4px;
+    margin: 3px 5px;
+    cursor: pointer;
+    height: 30px;
+    width: 35px;
+
+    .card-body {
+        text-align: center;
+        padding: 0;
+    }
+}

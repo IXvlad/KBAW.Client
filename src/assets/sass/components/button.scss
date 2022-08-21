@@ -1,4 +1,8 @@
 .btn {
+    &:focus {
+        color: black;
+    }
+
     background-image: none;
 
     strong {
@@ -9,10 +13,10 @@
         @include button-variant(
             $white,
             $primary-border,
-            $white,
+            black,
             $primary-hover-bg,
             $primary-hover-border,
-            $white,
+            black,
             $primary-active-bg,
             $primary-active-border,
             $white,

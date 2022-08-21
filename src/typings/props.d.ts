@@ -3,8 +3,6 @@ import IRouteItem from "@routes/models";
 import { Column, Table } from "@tanstack/react-table";
 import { Table as ReactTable } from "@tanstack/table-core";
 import React, { ReactElement } from "react";
-import { DropdownMenuVariant } from "react-bootstrap/DropdownMenu";
-import { ButtonVariant } from "react-bootstrap/types";
 
 interface IDropdownItem {
     key: string | number;
@@ -15,10 +13,9 @@ interface IDropdownItem {
 interface IDropdownProps {
     children?: React.ReactNode;
     id: string;
-    menuVariant?: DropdownMenuVariant;
     remoteData?: IDropdownRemoteData;
     title?: string;
-    variant?: ButtonVariant;
+    withDownload?: boolean;
 }
 
 interface IDropdownRemoteData {
@@ -29,9 +26,7 @@ interface IDropdownRemoteData {
 interface IEmptyDropdownProps {
     children: React.ReactNode;
     id: string;
-    menuVariant?: DropdownMenuVariant;
     title: string;
-    variant?: ButtonVariant;
 }
 
 interface IFilterProps {

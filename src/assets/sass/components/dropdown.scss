@@ -19,5 +19,32 @@
     .dropdown-menu.show {
         overflow-y: hidden;
         min-width: $dropdown-select-page-min-width;
+        z-index: 1001;
+    }
+}
+
+.custom-dropdown {
+    border: 1px solid $border-color;
+
+    &:hover {
+        border-color: $primary;
+    }
+
+    .content {
+        background-color: $white;
+        display: flex;
+    }
+
+    &-toggle {
+        border: 0;
+        width: 100%;
+
+        &:after {
+            display: none;
+        }
+    }
+
+    .dropdown-menu.show {
+        z-index: 1001;
     }
 }
