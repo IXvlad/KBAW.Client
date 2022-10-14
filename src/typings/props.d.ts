@@ -14,7 +14,8 @@ interface IDropdownProps {
     children?: React.ReactNode;
     id: string;
     remoteData?: IDropdownRemoteData;
-    title?: string;
+    placeholder?: string;
+    placeholderColor?: string;
     withDownload?: boolean;
 }
 
@@ -26,7 +27,7 @@ interface IDropdownRemoteData {
 interface IEmptyDropdownProps {
     children: React.ReactNode;
     id: string;
-    title: string;
+    text: string;
 }
 
 interface IFilterProps {

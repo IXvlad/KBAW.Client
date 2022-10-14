@@ -1,7 +1,8 @@
 .dropdown {
     .dropdown-menu {
+        width: 100%;
         max-height: $dropdown-menu-max-height;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     .dropdown-spinner {
@@ -25,20 +26,27 @@
 
 .custom-dropdown {
     border: 1px solid $border-color;
-
-    &:hover {
-        border-color: $primary;
-    }
-
+    @include transition($form-select-transition);
+    
     .content {
         background-color: $white;
         display: flex;
     }
 
+    &.show {
+        border-color: $primary;
+    }
+
     &-toggle {
         border: 0;
         width: 100%;
-
+        
+        .value::after {
+            content: escape-svg($form-select-indicator);
+            display: inline-block;
+            width: $input-padding-x;
+        }
+        
         &:after {
             display: none;
         }

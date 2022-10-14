@@ -1,43 +1,13 @@
-// Bootstrap
+//** Bootstrap
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+//**
 
+
+// General
 $body-bg: #f6fbff;
 
-$btn-close-focus-shadow: none;
-$btn-focus-width: 0;
-
-$dropdown-min-width: 200px;
-
-$input-bg: white;
-$input-box-shadow: none;
-$input-focus-box-shadow: none;
-
-$navbar-toggler-padding-x: 0;
-$navbar-toggler-padding-y: 0;
-
-$offcanvas-horizontal-width: 250px;
-
-$pagination-focus-box-shadow: none;
-
-$primary: #006cb5;
-
-/**********************************************/
-
-// Custom
-
-$primary-active: #0d6efd;
-
-// Border
-
-$border-color: #dee2e6;
-$border-radius: 0;
-$border-radius-sm: $border-radius;
-
-// Button
-
-$btn-link-hover-color: white;
-$btn-border-radius-lg: $border-radius;
-
-$primary-bg: $border-color;
+$primary-bg: #dee2e6;
 $primary-border: $primary-bg;
 $primary-disabled-bg: $primary-bg;
 $primary-disabled-border: $primary-bg;
@@ -47,11 +17,61 @@ $primary-hover-border: $primary-active;
 $primary-active-bg: $primary-hover-bg;
 $primary-active-border: $primary-active;
 
-// Card
 
-$card-icon-dropdown-bg: #ebf1f7;
+// Button
+$btn-close-focus-shadow: none;
+$btn-focus-width: 0;
+$btn-link-hover-color: white;
+
+
+// Border
+$border-color: #dee2e6;
+$border-radius: 0;
+$border-radius-sm: $border-radius;
+
 
 // Dropdown
+$dropdown-padding-x: 0;
+$dropdown-padding-y: 0;
+$dropdown-link-active-bg: $primary-active;
 
+
+// Input
+$input-bg: white;
+$input-box-shadow: none;
+$input-focus-box-shadow: none;
+
+
+// Navbar
+$navbar-toggler-padding-x: 0;
+$navbar-toggler-padding-y: 0;
+$offcanvas-horizontal-width: 250px;
+
+
+// Pagination
+$pagination-focus-box-shadow: none;
+
+
+// Form
+$form-check-input-border-radius: 0;
+$form-check-input-width: 1.25em;
+$form-check-input-focus-box-shadow: none;
+$form-check-input-checked-bg-color: $primary-active;
+$form-select-box-shadow: none;
+$form-select-focus-box-shadow: none;
+
+
+//** Custom
+//
+//**
+
+
+// Card
+$card-icon-dropdown-bg: $cyan-100;
+
+
+// Dropdown
 $dropdown-select-page-min-width: 60px;
+$dropdown-border-radius: 0;
 $dropdown-menu-max-height: 140px;
+$dropdown-item-padding-x: $input-padding-x;

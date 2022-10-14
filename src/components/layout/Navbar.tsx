@@ -19,12 +19,12 @@ const Navbar: FC<{}> = (): ReactElement => {
                         <img src="../assets/images/Logo.png" width="35" height="30" className="d-inline-block align-top" alt="KBAW logo" />
                         <strong className="text-white">{resources.Labels.main_lbl.toUpperCase()}</strong>
                     </BNavbar.Brand>
-                    <BNavbar.Toggle aria-controls={`${key}`} className="text-white border-0">
+                    <BNavbar.Toggle aria-controls={key} className="text-white border-0">
                         <List className="fs-2" />
                     </BNavbar.Toggle>
-                    <BNavbar.Offcanvas id={`${key}`} aria-labelledby={`${key}`} placement="end">
+                    <BNavbar.Offcanvas id={`${key}-canvas`} aria-labelledby={key} placement="end">
                         <Offcanvas.Header closeButton>
-                            <Offcanvas.Title id={`${key}`}>NAVIGATE</Offcanvas.Title>
+                            <Offcanvas.Title id={key}>NAVIGATE</Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">

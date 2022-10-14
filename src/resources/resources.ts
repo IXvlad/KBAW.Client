@@ -1,6 +1,6 @@
 ﻿export const resources = {
     Labels: {
-        dropdown_title_lbl: "Select...",
+        dropdown_title_lbl: "Select item",
         main_lbl: "Knowledge base about welding",
         expert_title_lbl: "Expert page",
         expert_sub_title_lbl: "Create, edit records and add new recommended books with files",
